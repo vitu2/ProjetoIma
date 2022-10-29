@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Home } from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
-import Cadastro from "./pages/Cadastro/cadastro";
+// import Cadastro from "./pages/Cadastro/cadastro";
 import CadastroTeste from "./pages/CadastroTeste/CadastroTeste";
 import { Produto } from "./pages/Produto/Produto";
 import { ProdutosPage } from "./pages/ProdutosPage/ProdutosPage";
@@ -12,10 +12,12 @@ import Checkout from "./pages/Checkout/Checkout";
 import UserConfigs from "./pages/UserConfigs/UserConfigs";
 import Layout from "./components/Layout/Layout";
 
+
 function App() {
   let [produtosCarrinho, setProdutosCarrinho] = useState([]);
-  // let url = 'http://15.228.244.21:3000'
-  let url = "http://localhost";
+   //let url = 'http://15.228.244.21:3000'
+  let url = 'http://localhost:80';
+
 
   useEffect(() => {
     if (localStorage.customerData) {
@@ -83,7 +85,7 @@ function App() {
           {/* <Route path="/Cadastro" element={<Cadastro  url={url} />}></Route> */}
           <Route path="/Cadastro" element={<CadastroTeste url={url} />}></Route>
           <Route
-            path="/Produto/:itemID/:nome"
+            path="/Produto/:itemID/:type"
             element={
               <Produto
                 url={url}

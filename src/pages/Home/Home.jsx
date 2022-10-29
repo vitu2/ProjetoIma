@@ -9,12 +9,14 @@ export const Home = ({url}) => {
 
   useEffect(() => {
     fetch(`${url}/products`)
-      .then((res) => res.json())
-      .then((resultado) => {
-        setProdutos(resultado);
-      });
+    .then((res) => res.json())
+    .then((resultado) => {
+      setProdutos(resultado);
+    });
   }, []);
 
+
+  
   const produtosOffer = produtos.filter((produto) => produto.offer_percent > 0);
 
   let [showOffersOnly, setShowOffersOnly] = useState(false);

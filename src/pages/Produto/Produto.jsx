@@ -16,11 +16,13 @@ export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
 
   const [filter, setFilter] = useState()
 
+  
   useEffect(() => {
+    console.log('chegou aqui')
     fetch(`${url}/products/${itemId}`)
-      .then((res) => res.json())
-      .then((resultado) => {
-        setProduct(resultado);
+    .then((res) => res.json())
+    .then((resultado) => {
+      setProduct(resultado);
         let box = 0;
         let img = 0;
         setTimeout(() => {
@@ -30,17 +32,23 @@ export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
           box.addEventListener("mousemove", (e) => {
             const x = e.clientX - e.target.offsetLeft;
             const y = e.clientY - e.target.offsetTop;
-
+            
             img.style.transformOrigin = `${x}px ${y}px`;
             img.style.transform = "scale(2)";
           });
-
+          
           box.addEventListener("mouseleave", () => {
             img.style.transformOrigin = `center center`;
             img.style.transform = "scale(1)";
           });
         }, 1);
       });
+
+    fetch(`${url}/productsFilter/${type}`)
+    .then((res) => res.json())
+    .then((resultado) => {
+      setFilter(resultado)
+    })
   }, [itemId]);
 
   const formatPrice = (price) => {
@@ -98,6 +106,7 @@ export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
           </section>
         </>
       )}
+      <h2 className="txt-ProRelacionado">Produtos Relacionados</h2>
       <ProRelacionado filter={filter} />
     </>
   );

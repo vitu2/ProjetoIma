@@ -2,9 +2,9 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "./Slider.css";
 import { Navigation } from "swiper";
 import { NavLink } from "react-router-dom";
+import "./Slider.css";
 
 export const Slider = () => {
   return (
