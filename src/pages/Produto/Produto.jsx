@@ -7,11 +7,14 @@ import ProRelacionado from './ProRelacionado/ProRelacionado'
 export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
   const params = useParams();
   const itemId = params.itemID;
+  const type = params.type;
   const [product, setProduct] = useState([
     {
       product_id: parseInt(itemId),
     },
   ]);
+
+  const [filter, setFilter] = useState()
 
   useEffect(() => {
     fetch(`${url}/products/${itemId}`)

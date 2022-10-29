@@ -9,13 +9,14 @@ import { useRef } from "react";
 
 export const Produtos = ({ produto, url }) => {
   //Stars//
+
   const [update, setUpdate] = useState(false);
 
   let numberOfStars = useRef(5);
   let totalStars = useRef(100);
 
   // useEffect(() => {
-  //   fetch(`${url}/productStar/${produto.product_id}`)
+  //   fetch(`url/${produto.product_id}`)
   //     .then((res) => res.json())
   //     .then((resultado) => {
   //       totalStars.current = resultado[0].totalStars;
@@ -23,6 +24,7 @@ export const Produtos = ({ produto, url }) => {
   //       setUpdate(!update);
   //     });
   // }, [produto.product_id]);
+
 
   //Stars//
 
@@ -182,7 +184,7 @@ export const Produtos = ({ produto, url }) => {
                 </div>
               </div>
               <NavLink
-                to={`/Produto/${produto.product_id}/${produto.name}`}
+                to={`/Produto/${produto.product_id}/${produto.type}`}
                 onClick={() => {
                   window.scrollTo({
                     top: 0,
@@ -209,7 +211,7 @@ export const Produtos = ({ produto, url }) => {
               style={{ color: `${favoriteHeart}`, transition: "all 0.3s" }}
             />
             <NavLink
-              to={`/Produto/${produto.product_id}/${produto.name}`}
+              to={`/Produto/${produto.product_id}/${produto.type}`}
               onClick={() => {
                 window.scrollTo({
                   top: 0,
@@ -218,7 +220,7 @@ export const Produtos = ({ produto, url }) => {
               }}
             >
               <div className="produtos__img">
-                <img src={produto.img_link} alt={produto.name} />
+                <img src={produto.img_link} alt={produto.type} />
               </div>
             </NavLink>
           </div>
@@ -381,7 +383,7 @@ export const Produtos = ({ produto, url }) => {
             </div>
 
             <NavLink
-              to={`/Produto/${produto.product_id}/${produto.name}`}
+              to={`/Produto/${produto.product_id}/${produto.type}`}
               onClick={() => {
                 window.scrollTo({
                   top: 0,
