@@ -2,6 +2,7 @@ import "./Produto.css";
 import { useParams } from "react-router-dom";
 import { ButtonProduct } from "../../components/Button-product/Button-product";
 import { useState, useEffect } from "react";
+import ProRelacionado from './ProRelacionado/ProRelacionado'
 
 export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
   const params = useParams();
@@ -94,6 +95,7 @@ export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
           </section>
         </>
       )}
+      <ProRelacionado filter={filter} />
     </>
   );
 };
