@@ -18,7 +18,7 @@
   border-radius: 20px;
   font-size: 115%;
 
-  background-color: var(--bg-produtos);
+  background-color: whitesmoke;
   -webkit-box-shadow: 3px 9px 16px 1px rgba(0, 0, 0, 0.45);
   box-shadow: 3px 9px 16px 1px rgba(0, 0, 0, 0.45);
   transition: all 0.3s;

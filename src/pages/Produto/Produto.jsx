@@ -18,7 +18,6 @@ export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
 
   
   useEffect(() => {
-    console.log('chegou aqui')
     fetch(`${url}/products/${itemId}`)
     .then((res) => res.json())
     .then((resultado) => {

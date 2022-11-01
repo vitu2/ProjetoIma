@@ -5,23 +5,18 @@ import './proRelacionado.css'
 
 
 const ProRelacionado = ({ filter }) => {
-
+    console.log("filter")
+    console.log(filter)
     return (
         <div className='container-pro' >
-
-            {filter !== undefined && (
+            {
+            filter !== undefined && (
                 <>
                     {filter.map((produto) => (
                         <Produtos key={produto.product_id} produto={produto} />
                     ))}
                 </>
-            )
-            }
-
-            {/* {filter.map((produto) => (
-                <Produtos key={produto.product_id} produto={produto} />
-            ))} */}
-
+            )}
         </div>
     )
 }

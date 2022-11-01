@@ -8,7 +8,7 @@
   /* height: calc(100vh - 150px); */
 
   padding-top: 70px;
-  background-color: var(--bg-produtos);
+  background-color: whitesmoke;
   width: 100%;
 }
 .produto__image-box {
@@ -16,7 +16,7 @@
   margin-top: -70px;
 }
 .produto__image {
-  height: 100%;
+  height: 350px;
 }
 
 .produto__title {
